@@ -15,9 +15,6 @@ class _PokemonScreenState extends State<PokemonScreen> {
   Map<String, dynamic>? pokemonData;
   bool isLoading = false;
 
-  // ======================================================
-  // 🔥 FUNCIÓN PRINCIPAL: Buscar Pokémon + Guardar Firestore
-  // ======================================================
   Future<void> fetchPokemon() async {
     if (controller.text.isEmpty) {
       ScaffoldMessenger.of(context)
@@ -30,9 +27,6 @@ class _PokemonScreenState extends State<PokemonScreen> {
     try {
       final data = await service.getPokemon(controller.text.toLowerCase());
 
-      // --------------------------------------------------
-      // 🔥 GUARDAR EN FIRESTORE
-      // --------------------------------------------------
       await FirebaseFirestore.instance.collection("busquedas").add({
         "nombre": data["name"],
         "altura": data["height"],
@@ -43,7 +37,6 @@ class _PokemonScreenState extends State<PokemonScreen> {
         "fecha": DateTime.now(),
       });
 
-      // Mostrar en pantalla
       setState(() => pokemonData = data);
 
     } catch (e) {
@@ -54,9 +47,6 @@ class _PokemonScreenState extends State<PokemonScreen> {
     }
   }
 
-  // ======================================================
-  // 🔥 INTERFAZ COMPLETA
-  // ======================================================
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +55,6 @@ class _PokemonScreenState extends State<PokemonScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Campo de texto
             TextField(
               controller: controller,
               decoration: const InputDecoration(
@@ -76,7 +65,6 @@ class _PokemonScreenState extends State<PokemonScreen> {
 
             const SizedBox(height: 10),
 
-            // Botón buscar
             ElevatedButton(
               onPressed: fetchPokemon,
               child: const Text('Buscar'),
@@ -84,7 +72,6 @@ class _PokemonScreenState extends State<PokemonScreen> {
 
             const SizedBox(height: 10),
 
-            // 🔥 Botón historial
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, "/historial"),
               child: const Text("Ver historial de búsquedas"),
@@ -92,10 +79,8 @@ class _PokemonScreenState extends State<PokemonScreen> {
 
             const SizedBox(height: 20),
 
-            // Indicador de carga
             if (isLoading) const CircularProgressIndicator(),
 
-            // Resultado del Pokémon
             if (pokemonData != null && !isLoading) ...[
               Image.network(pokemonData!['sprites']['front_default']),
 
