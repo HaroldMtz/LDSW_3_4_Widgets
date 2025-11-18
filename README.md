@@ -1,23 +1,35 @@
-# LDSW 3.4 - Utilización de Widgets
+ 📘 LDSW – Actividad 3.7: Integración de Firebase + HTTP + Flutter
 
-Este proyecto corresponde a la **Actividad 3.4** de la materia *Diseño de Aplicaciones Móviles*.
+Este proyecto corresponde a la actividad **3.7 del módulo LDSW**, donde se integra una aplicación Flutter con:
 
-## 🎯 Objetivo
-Demostrar el uso y configuración de los widgets básicos de Flutter:
-- **Text**
-- **Row**
-- **Column**
-- **Stack**
-- **Container**
+- API externa (PokeAPI)
+- Firebase (Firestore)
+- Flutter Web / Android
+- Consulta y guardado de datos
+- Historial en tiempo real desde Firestore
 
-## 🧱 Descripción
-La aplicación muestra ejemplos interactivos:
-- `Text`: texto con estilo.
-- `Row`: fila con íconos que muestran SnackBars.
-- `Column`: lista de elementos seleccionables.
-- `Stack`: tarjeta animada que cambia al tocarse (ripple, fade y slide).
-- `Container`: caja con borde redondeado ajustable mediante Slider.
+La aplicación permite buscar Pokémon usando HTTP, mostrar su información y guardar automáticamente cada búsqueda en Firestore.
 
-## 🚀 Ejecución
-```bash
-flutter run
+---
+
+## 🚀 Tecnologías Utilizadas
+
+- Flutter 3.38.1  
+- Dart SDK 3.x  
+- Firebase Core  
+- Cloud Firestore  
+- HTTP  
+- PokeAPI (https://pokeapi.co)
+
+---
+
+## 📱 Funcionalidades del Proyecto
+
+### 🔍 Consulta de Pokémon mediante HTTP
+La app permite ingresar el nombre de un Pokémon y obtener:
+
+- Imagen oficial  
+- Nombre  
+- Altura  
+- Peso  
+- Tipos 
