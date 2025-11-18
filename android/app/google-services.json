@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "345206435550",
+    "project_id": "catalogo-peliculas-firebase",
+    "storage_bucket": "catalogo-peliculas-firebase.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345206435550:android:c19bd1001959668cfb1c4f",
+        "android_client_info": {
+          "package_name": "com.example.ldsw_3_4_widgets"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD68PUfHRXv8-XYMLdiR3YJilOzE4JRqvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
